@@ -16,58 +16,7 @@ export type PortfolioItem = {
   description: string;
 };
 
-const staticItems: PortfolioItem[] = [
-  {
-    id: "w1",
-    category: "weddings",
-    title: "Vows in Gold",
-    type: "image",
-    url: "https://images.unsplash.com/photo-1519741497674-611481863552",
-    description: "Elegant wedding vows under the Lucknow golden lights",
-  },
-  {
-    id: "f1",
-    category: "films",
-    title: "The Royal Symphony",
-    type: "video",
-    url: "https://images.unsplash.com/photo-1478720568477-152d9b164e26",
-    youtubeId: "Zq88pS7g31g",
-    description: "Cinematic Wedding film capturing royal architecture and smiles",
-  },
-  {
-    id: "p1",
-    category: "prewed",
-    title: "Sunset Serenade",
-    type: "image",
-    url: "https://images.unsplash.com/photo-1532712938310-34cb3982ef74",
-    description: "Romantic golden hour pre-wedding photoshoot at Gomti Riverfront",
-  },
-  {
-    id: "s1",
-    category: "photoshoots",
-    title: "Ethereal Portrait",
-    type: "image",
-    url: "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
-    description: "High-end studio lighting close-up fashion portrait",
-  },
-  {
-    id: "w2",
-    category: "weddings",
-    title: "A Royal Passage",
-    type: "image",
-    url: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc",
-    description: "A gorgeous luxury entrance of the bride and groom",
-  },
-  {
-    id: "f2",
-    category: "films",
-    title: "Lucknowi Romance",
-    type: "video",
-    url: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
-    youtubeId: "v14K3Q_5u4g",
-    description: "Pre-wedding cinematic film with aesthetic heritage look",
-  },
-];
+const staticItems: PortfolioItem[] = [];
 
 const categories = [
   { id: "all", label: "All Works" },
