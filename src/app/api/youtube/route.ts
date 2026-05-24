@@ -17,10 +17,11 @@ export async function GET() {
     const feed = await parser.parseURL(`https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`);
     
     const videos = feed.items.map((item: any) => {
-      // Safely extract thumbnail and video ID
-      const mediaGroup = item['media:group'];
-      const thumbnail = mediaGroup && mediaGroup['media:thumbnail'] ? mediaGroup['media:thumbnail'][0].$.url : '';
+      // Extract YouTube video ID
       const videoId = item['yt:videoId'];
+      // Build thumbnail URL directly from video ID (fallback to any provided thumbnail)
+      const fallbackThumbnail = item['media:group'] && item['media:group']['media:thumbnail'] ? item['media:group']['media:thumbnail'][0].$.url : '';
+      const thumbnail = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : fallbackThumbnail;
 
       return {
         id: videoId || item.id,
