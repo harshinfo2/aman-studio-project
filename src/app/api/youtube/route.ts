@@ -6,7 +6,7 @@ export async function GET() {
     // We are using a generic YouTube RSS feed URL format.
     // NOTE: To make this work with Aman Studio, you need to provide the Channel ID.
     // Replace 'YOUR_CHANNEL_ID_HERE' with the actual YouTube Channel ID (starts with UC...)
-    const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID || 'UC-9-kyTW8ZkZNDHQJ6FgpwQ'; // Placeholder channel ID for now
+    const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID || 'UCoOgyOXxZlW1rVPouwLfYuQ'; // Placeholder channel ID for now
     
     const parser = new Parser({
       customFields: {
