@@ -152,7 +152,7 @@ export default function ContactForm({ initialPackage = "" }: ContactFormProps) {
             {/* Google Map Frame */}
             <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden border border-gold-accent/15 border-gold-glow relative">
               <iframe
-                src="https://maps.google.com/maps?q=Daya%20Market,%20near%20B.R.%20Gop%20School,%20Baldev%20Vihar,%20Telibagh,%20Lucknow,%20Uttar%20Pradesh%20226002&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=AMAN%20DIGITAL%20STUDIO%20,%20Telibagh%20,%20Lucknow&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

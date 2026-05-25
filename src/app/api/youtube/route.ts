@@ -23,9 +23,20 @@ export async function GET() {
       const fallbackThumbnail = item['media:group'] && item['media:group']['media:thumbnail'] ? item['media:group']['media:thumbnail'][0].$.url : '';
       const thumbnail = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : fallbackThumbnail;
 
+      // Categorize based on title
+      const titleLower = (item.title || "").toLowerCase();
+      let category = 'films';
+      if (titleLower.includes('pre') && (titleLower.includes('wed') || titleLower.includes('shoot'))) {
+        category = 'prewed';
+      } else if (titleLower.includes('wedding') || titleLower.includes('shadi') || titleLower.includes('marriage')) {
+        category = 'weddings';
+      } else if (titleLower.includes('shoot') || titleLower.includes('photo') || titleLower.includes('model') || titleLower.includes('portrait')) {
+        category = 'photoshoots';
+      }
+
       return {
         id: videoId || item.id,
-        category: 'films',
+        category: category,
         title: item.title,
         type: 'video',
         url: thumbnail,

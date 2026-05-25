@@ -123,11 +123,23 @@ export default function PortfolioShowcase({ limit, showSearch = false }: Portfol
         </div>
 
         {/* Portfolio Grid */}
-        <motion.div
-          layout
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-        >
-          <AnimatePresence mode="popLayout">
+        {displayedItems.length === 0 ? (
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col items-center justify-center py-24 text-center bg-studio-darkgray/30 rounded-2xl border border-gold-accent/10"
+          >
+            <h3 className="font-serif text-2xl text-studio-offwhite font-bold mb-3">Coming Soon</h3>
+            <p className="text-studio-gray text-sm max-w-md mx-auto">
+              We are currently curating our best work for this category. Check back shortly to see our latest updates!
+            </p>
+          </motion.div>
+        ) : (
+          <motion.div
+            layout
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <AnimatePresence mode="popLayout">
             {displayedItems.map((item) => (
               <motion.div
                 layout
@@ -178,6 +190,7 @@ export default function PortfolioShowcase({ limit, showSearch = false }: Portfol
             ))}
           </AnimatePresence>
         </motion.div>
+        )}
 
         {/* View All Button for Home Page */}
         {limit && displayedItems.length >= limit && (
